@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+
+    <!-- В корне всего проекта должен находиться pom.xml.
+Это файл конфигурации называется реактор. Он служит
+для вынесения общих зависимостей проектов.
+Корневой pom.xml должен иметь тип сборка pom
+После формирования всех модулей, для проверки,
+соберите корневой проект job4j_fast_food maven -> install.
+-->
+    <groupId>ru.job4j</groupId>
+    <artifactId>job4j_fast_food</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>admin</module> <!-- админка-->
+        <module>delivery</module> <!-- сервис доставки-->
+        <module>dish</module> <!-- сервис блюд-->
+        <module>domain</module> <!-- доменные модели-->
+        <module>kitchen</module> <!-- сервис кухни-->
+        <module>notification</module> <!-- сервис уведомлений-->
+        <module>order</module> <!-- сервис заказов-->
+        <module>payment</module> <!-- сервис платежей-->
+    </modules>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <configLocation>checkstyle.xml</configLocation>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
