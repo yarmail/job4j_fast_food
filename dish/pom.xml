@@ -14,4 +14,13 @@
     <version>1.0</version>
     <packaging>jar</packaging>
 
+    <dependencies>
+        <!-- Такая настройка позволяет использовать
+        код модуля domain в других модулях -->
+        <dependency>
+            <groupId>ru.job4j</groupId>
+            <artifactId>domain</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
 </project>
